@@ -1,0 +1,429 @@
+/* ============================================================
+   BESTIA — Home Page
+   ============================================================ */
+
+/* ── Hero ────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+/* Radial glow behind the brand name */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(ellipse, rgba(200, 98, 42, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: var(--space-3);
+  opacity: 0;
+  animation: rise 800ms var(--ease-out) 300ms forwards;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(7rem, 20vw, 18rem);
+  letter-spacing: 0.06em;
+  line-height: 0.88;
+  color: var(--clr-white);
+  /* subtle stroke for depth */
+  text-shadow: 0 0 80px rgba(200, 98, 42, 0.15);
+  opacity: 0;
+  animation: heroTitleIn 1.2s var(--ease-out) 0ms forwards;
+}
+
+@keyframes heroTitleIn {
+  0%   { opacity: 0; transform: scaleX(0.92) translateY(20px); }
+  100% { opacity: 1; transform: scaleX(1) translateY(0); }
+}
+
+.hero__subtitle {
+  margin-top: var(--space-3);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--clr-muted);
+  letter-spacing: 0.05em;
+  max-width: 480px;
+  opacity: 0;
+  animation: rise 800ms var(--ease-out) 700ms forwards;
+}
+
+.hero__cta-group {
+  margin-top: var(--space-5);
+  display: flex;
+  gap: var(--space-3);
+  opacity: 0;
+  animation: rise 800ms var(--ease-out) 950ms forwards;
+}
+
+/* Scroll indicator */
+.hero__scroll {
+  position: absolute;
+  bottom: var(--space-4);
+  /* left: 0%; */
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  animation: rise 600ms var(--ease-out) 1400ms forwards;
+}
+
+.hero__scroll span {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--clr-muted), transparent);
+  animation: scrollPulse 2s ease-in-out 2s infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50%       { opacity: 0.4; transform: scaleY(0.6); }
+}
+
+/* Horizontal rule under hero */
+.hero__rule {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--clr-border), transparent);
+}
+
+/* ── Differentials ───────────────────────────────────────── */
+.differentials {
+  padding: var(--space-8) 0;
+}
+
+.differentials__header {
+  margin-bottom: var(--space-6);
+}
+
+.differentials__headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: var(--clr-white);
+  max-width: 14ch;
+}
+
+.differentials__headline em {
+  font-style: normal;
+  color: var(--clr-accent);
+}
+
+.differentials__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  border: 1px solid var(--clr-border);
+  margin-top: var(--space-6);
+}
+
+.diff-card {
+  padding: var(--space-5) var(--space-4);
+  background: var(--clr-surface);
+  border-right: 1px solid var(--clr-border);
+  transition: background var(--dur-base);
+}
+
+.diff-card:last-child {
+  border-right: none;
+}
+
+.diff-card:hover {
+  background: var(--clr-surface-2);
+}
+
+.diff-card__number {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--clr-accent);
+  opacity: 0.25;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.diff-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  margin-bottom: var(--space-2);
+}
+
+.diff-card__text {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--clr-muted);
+  line-height: 1.6;
+}
+
+/* ── Burger Teasers ──────────────────────────────────────── */
+.teasers {
+  padding: var(--space-7) 0;
+  border-top: 1px solid var(--clr-border);
+}
+
+.teasers__label {
+  margin-bottom: var(--space-5);
+}
+
+.teasers__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.teasers__grid--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.teaser-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 5/6;
+  background: var(--clr-surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-5);
+  cursor: pointer;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.teaser-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Decorative large background letter */
+.teaser-card::before {
+  content: attr(data-letter);
+  position: absolute;
+  top: -0.05em;
+  right: 0.05em;
+  font-family: var(--font-display);
+  font-size: 18rem;
+  line-height: 1;
+  color: var(--clr-surface-2);
+  pointer-events: none;
+  transition: transform var(--dur-slow) var(--ease-out),
+              color var(--dur-slow);
+  z-index: 0;
+}
+
+.teaser-card:hover::before {
+  color: rgba(200, 98, 42, 0.06);
+  transform: scale(1.04);
+}
+
+.teaser-card--dark {
+  background: var(--clr-surface);
+}
+
+.teaser-card--light {
+  background: var(--clr-surface-2);
+}
+
+.teaser-card__tag {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: var(--space-2);
+  position: relative;
+  z-index: 1;
+}
+
+.teaser-card__name {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  letter-spacing: 0.08em;
+  color: var(--clr-white);
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.teaser-card__meat {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--clr-muted);
+  margin-top: var(--space-1);
+  position: relative;
+  z-index: 1;
+}
+
+.teaser-card__divider {
+  width: 32px;
+  height: 1px;
+  background: var(--clr-accent);
+  margin: var(--space-2) 0;
+  position: relative;
+  z-index: 1;
+  transition: width var(--dur-base) var(--ease-out);
+}
+
+.teaser-card:hover .teaser-card__divider {
+  width: 64px;
+}
+
+.teaser-card__ingredients {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--clr-muted);
+  text-transform: uppercase;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+.teaser-card__arrow {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  font-size: 1.5rem;
+  color: var(--clr-muted);
+  opacity: 0;
+  transform: translate(-8px, 8px);
+  transition: opacity var(--dur-base), transform var(--dur-base) var(--ease-out);
+  z-index: 1;
+}
+
+.teaser-card:hover .teaser-card__arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ── Philosophy Strip ────────────────────────────────────── */
+.philosophy {
+  padding: var(--space-7) 0;
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  overflow: hidden;
+}
+
+.philosophy__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.philosophy__quote {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: var(--clr-white);
+  max-width: 18ch;
+  flex-shrink: 0;
+}
+
+.philosophy__quote em {
+  font-style: normal;
+  -webkit-text-stroke: 1px var(--clr-accent);
+  color: transparent;
+}
+
+.philosophy__body {
+  border-left: 1px solid var(--clr-border);
+  padding-left: var(--space-5);
+}
+
+.philosophy__text {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--clr-muted);
+  line-height: 1.8;
+  max-width: 42ch;
+}
+
+.philosophy__author {
+  margin-top: var(--space-3);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .differentials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diff-card:nth-child(2) { border-right: none; }
+  .diff-card:nth-child(3) { border-top: 1px solid var(--clr-border); }
+
+  .philosophy__inner {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .philosophy__body {
+    border-left: none;
+    border-top: 1px solid var(--clr-border);
+    padding-left: 0;
+    padding-top: var(--space-4);
+  }
+}
+
+@media (max-width: 640px) {
+  .teasers__grid,
+  .teasers__grid--three {
+    grid-template-columns: 1fr;
+  }
+
+  .differentials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diff-card { border-right: none; border-top: 1px solid var(--clr-border); }
+  .diff-card:first-child { border-top: none; }
+}

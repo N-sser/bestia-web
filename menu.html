@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú — BESTIA</title>
+  <meta name="description" content="Tres hamburguesas, dos carnes cada una. La Imperial (res+pollo), La Feral (res+cerdo), La Salvaje (pollo+cerdo). Pan de remolacha con avena sin gluten." />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+</head>
+<body>
+
+  <!-- ══ Navigation ══════════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="BESTIA — Inicio">BESTIA</a>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html" class="nav__link">Inicio</a></li>
+        <li><a href="menu.html" class="nav__link">Menú</a></li>
+        <li><a href="domicilios.html" class="nav__link">Domicilios</a></li>
+      </ul>
+      <a href="domicilios.html" class="btn nav__cta">Pedir ahora</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ══ Hero ════════════════════════════════════════════════ -->
+    <header class="menu-hero" aria-label="Encabezado del menú">
+      <div class="container">
+        <span class="section-label menu-hero__label">Lo que ofrecemos</span>
+        <h1 class="menu-hero__title reveal">EL<br />MENÚ</h1>
+        <p class="menu-hero__sub reveal">
+          Tres hamburguesas. Cada una es un solo patty dividido a la mitad — una carne por lado, cada una cocinada en su propia grasa. Pan de remolacha con avena sin gluten en todas.
+        </p>
+      </div>
+      <div class="menu-hero__bg-letter" aria-hidden="true">M</div>
+    </header>
+
+    <!-- ══ Burger Blocks ════════════════════════════════════════ -->
+    <section class="menu-section" aria-label="Hamburguesas">
+      <div class="container">
+
+        <!-- ── La Imperial: Res + Pollo ──────────────────────── -->
+        <article class="burger-block reveal" aria-label="La Imperial">
+          <div class="burger-block__visual" aria-hidden="true">
+            <div class="burger-block__visual-placeholder">🥩🍗</div>
+          </div>
+
+          <div class="burger-block__info">
+            <div class="burger-block__index" aria-hidden="true">01</div>
+            <h2 class="burger-block__name">La Imperial</h2>
+
+            <div class="burger-block__combo" aria-label="Combinación de carnes">
+              <span class="burger-block__combo-tag">Res</span>
+              <span class="burger-block__combo-sep" aria-hidden="true">✕</span>
+              <span class="burger-block__combo-tag">Pollo</span>
+            </div>
+
+            <div class="burger-block__divider" aria-hidden="true"></div>
+
+            <p class="burger-block__ingredients-label">Ingredientes</p>
+            <ul class="burger-block__ingredients" aria-label="Ingredientes de La Imperial">
+              <li class="ingredient">
+                <span class="ingredient__name">Pan de remolacha</span>
+                <span class="ingredient__note">— avena sin gluten, color natural</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Lado res</span>
+                <span class="ingredient__note">— 90g molida fresca, cocida en sebo de res</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Lado pollo</span>
+                <span class="ingredient__note">— 90g pechuga molida, cocida en schmaltz</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Cebolla crispy</span>
+                <span class="ingredient__note">— frita en sebo, sin aceite vegetal</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Chimichurri casero</span>
+                <span class="ingredient__note">— perejil, ajo, vinagre, sin conservantes</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Lechuga mantequilla</span>
+                <span class="ingredient__note">— fresca, sin aderezo</span>
+              </li>
+            </ul>
+
+            <div class="burger-block__method-row" aria-label="Grasas de cocción">
+              <div class="burger-block__method">
+                <span class="burger-block__method-label">Res cocinada en</span>
+                <span class="burger-block__method-value">Sebo de res</span>
+              </div>
+              <div class="burger-block__method">
+                <span class="burger-block__method-label">Pollo cocinado en</span>
+                <span class="burger-block__method-value">Schmaltz</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── La Feral: Res + Cerdo ──────────────────────────── -->
+        <article class="burger-block burger-block--reversed reveal" aria-label="La Feral">
+          <div class="burger-block__visual" aria-hidden="true">
+            <div class="burger-block__visual-placeholder">🥩🍖</div>
+          </div>
+
+          <div class="burger-block__info">
+            <div class="burger-block__index" aria-hidden="true">02</div>
+            <h2 class="burger-block__name">La Feral</h2>
+
+            <div class="burger-block__combo" aria-label="Combinación de carnes">
+              <span class="burger-block__combo-tag">Res</span>
+              <span class="burger-block__combo-sep" aria-hidden="true">✕</span>
+              <span class="burger-block__combo-tag">Cerdo</span>
+            </div>
+
+            <div class="burger-block__divider" aria-hidden="true"></div>
+
+            <p class="burger-block__ingredients-label">Ingredientes</p>
+            <ul class="burger-block__ingredients" aria-label="Ingredientes de La Feral">
+              <li class="ingredient">
+                <span class="ingredient__name">Pan de remolacha</span>
+                <span class="ingredient__note">— avena sin gluten, color natural</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Lado res</span>
+                <span class="ingredient__note">— 90g molida fresca, cocida en sebo de res</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Lado cerdo</span>
+                <span class="ingredient__note">— 90g pulled, cocción lenta en manteca</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Maíz asado</span>
+                <span class="ingredient__note">— a la brasa, sin mantequilla artificial</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Pepinillos artesanales</span>
+                <span class="ingredient__note">— encurtido propio, sin vinagre industrial</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Mayonesa de ajo negro</span>
+                <span class="ingredient__note">— fermentado, sabor profundo y dulce</span>
+              </li>
+            </ul>
+
+            <div class="burger-block__method-row" aria-label="Grasas de cocción">
+              <div class="burger-block__method">
+                <span class="burger-block__method-label">Res cocinada en</span>
+                <span class="burger-block__method-value">Sebo de res</span>
+              </div>
+              <div class="burger-block__method">
+                <span class="burger-block__method-label">Cerdo cocinado en</span>
+                <span class="burger-block__method-value">Manteca de cerdo</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── La Salvaje: Pollo + Cerdo ──────────────────────── -->
+        <article class="burger-block reveal" aria-label="La Salvaje">
+          <div class="burger-block__visual" aria-hidden="true">
+            <div class="burger-block__visual-placeholder">🍗🍖</div>
+          </div>
+
+          <div class="burger-block__info">
+            <div class="burger-block__index" aria-hidden="true">03</div>
+            <h2 class="burger-block__name">La Salvaje</h2>
+
+            <div class="burger-block__combo" aria-label="Combinación de carnes">
+              <span class="burger-block__combo-tag">Pollo</span>
+              <span class="burger-block__combo-sep" aria-hidden="true">✕</span>
+              <span class="burger-block__combo-tag">Cerdo</span>
+            </div>
+
+            <div class="burger-block__divider" aria-hidden="true"></div>
+
+            <p class="burger-block__ingredients-label">Ingredientes</p>
+            <ul class="burger-block__ingredients" aria-label="Ingredientes de La Salvaje">
+              <li class="ingredient">
+                <span class="ingredient__name">Pan de remolacha</span>
+                <span class="ingredient__note">— avena sin gluten, color natural</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Lado pollo</span>
+                <span class="ingredient__note">— 90g pechuga molida, cocida en schmaltz</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Lado cerdo</span>
+                <span class="ingredient__note">— 90g panceta, crujiente en manteca</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Aguacate</span>
+                <span class="ingredient__note">— en láminas, sin aderezo</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Pico de gallo</span>
+                <span class="ingredient__note">— tomate, cilantro, cebolla roja, limón</span>
+              </li>
+              <li class="ingredient">
+                <span class="ingredient__name">Reducción de tamarindo</span>
+                <span class="ingredient__note">— dulce, ácido, sin azúcar añadida</span>
+              </li>
+            </ul>
+
+            <div class="burger-block__method-row" aria-label="Grasas de cocción">
+              <div class="burger-block__method">
+                <span class="burger-block__method-label">Pollo cocinado en</span>
+                <span class="burger-block__method-value">Schmaltz</span>
+              </div>
+              <div class="burger-block__method">
+                <span class="burger-block__method-label">Cerdo cocinado en</span>
+                <span class="burger-block__method-value">Manteca de cerdo</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ Common Ingredients ═══════════════════════════════════ -->
+    <section class="commons" aria-label="Ingredientes comunes">
+      <div class="container">
+        <div class="commons__header reveal">
+          <span class="section-label">En las tres</span>
+          <div class="divider"></div>
+          <h2 class="commons__title">Lo que no negociamos</h2>
+        </div>
+
+        <div class="commons__grid stagger">
+          <article class="common-item">
+            <div class="common-item__icon" aria-hidden="true">🟣</div>
+            <h3 class="common-item__name">Pan de remolacha</h3>
+            <p class="common-item__desc">Hecho con avena sin gluten. Color morado natural, sin colorantes artificiales.</p>
+          </article>
+
+          <article class="common-item">
+            <div class="common-item__icon" aria-hidden="true">🔥</div>
+            <h3 class="common-item__name">Solo grasa animal</h3>
+            <p class="common-item__desc">Sin aceites vegetales. Sebo de res, manteca de cerdo o schmaltz de pollo según la carne. Sin mezclas.</p>
+          </article>
+
+          <article class="common-item">
+            <div class="common-item__icon" aria-hidden="true">✕</div>
+            <h3 class="common-item__name">dos mitades</h3>
+            <p class="common-item__desc">cada mitad es una carne distinta, cocinada en su propia grasa, unidas en el plato.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ Footer ═══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand" aria-hidden="true">BESTIA</div>
+        <p class="footer__tagline">Pan de remolacha.<br />Dos carnes. Sin aceites.</p>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="index.html" class="footer__link">Inicio</a>
+          <a href="menu.html" class="footer__link">Menú</a>
+          <a href="domicilios.html" class="footer__link">Domicilios</a>
+        </nav>
+      </div>
+      <p class="footer__bottom">© 2025 Bestia — Hamburguesas artesanales</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</body>
+</html>

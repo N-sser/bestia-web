@@ -1,0 +1,299 @@
+/* ============================================================
+   BESTIA — Domicilios Page
+   ============================================================ */
+
+/* ── Page Hero ───────────────────────────────────────────── */
+.delivery-hero {
+  padding-top: calc(var(--nav-height) + var(--space-7));
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.delivery-hero__label {
+  margin-bottom: var(--space-3);
+}
+
+.delivery-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  letter-spacing: 0.06em;
+  line-height: 0.9;
+  color: var(--clr-white);
+}
+
+.delivery-hero__title span {
+  display: block;
+  -webkit-text-stroke: 1px rgba(240, 228, 204, 0.25);
+  color: transparent;
+}
+
+.delivery-hero__sub {
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--clr-muted);
+  max-width: 48ch;
+  line-height: 1.7;
+}
+
+/* ── How It Works ────────────────────────────────────────── */
+.how-it-works {
+  padding: var(--space-8) 0;
+}
+
+.how-it-works__header {
+  margin-bottom: var(--space-6);
+}
+
+.how-it-works__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: 0.05em;
+  color: var(--clr-white);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+}
+
+/* Horizontal connecting line behind the steps */
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 2.6rem;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent,
+    var(--clr-border) 10%,
+    var(--clr-border) 90%,
+    transparent
+  );
+  z-index: 0;
+}
+
+.step {
+  padding: 0 var(--space-3);
+  position: relative;
+  z-index: 1;
+}
+
+.step__number-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: var(--space-4);
+}
+
+.step__number {
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid var(--clr-border);
+  background: var(--clr-bg);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--clr-accent);
+  letter-spacing: 0.05em;
+  transition: background var(--dur-base), border-color var(--dur-base);
+}
+
+.step:hover .step__number {
+  background: var(--clr-accent);
+  color: var(--clr-bg);
+  border-color: var(--clr-accent);
+}
+
+.step__title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  margin-bottom: var(--space-2);
+}
+
+.step__text {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  color: var(--clr-muted);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* ── Order CTA ───────────────────────────────────────────── */
+.order-cta {
+  padding: var(--space-7) 0;
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.order-cta__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.order-cta__headline {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 7rem);
+  letter-spacing: 0.05em;
+  line-height: 0.95;
+  color: var(--clr-white);
+}
+
+.order-cta__headline em {
+  font-style: normal;
+  color: var(--clr-accent);
+}
+
+.order-cta__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+.order-cta__sub {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--clr-muted);
+  text-align: right;
+  max-width: 28ch;
+  line-height: 1.6;
+}
+
+.btn--large {
+  font-size: 1.4rem;
+  padding: 1.1rem 2.5rem;
+  letter-spacing: 0.25em;
+}
+
+.btn--whatsapp {
+  background: transparent;
+  border: 1px solid var(--clr-accent);
+  color: var(--clr-accent);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  transition: all var(--dur-base) var(--ease-out);
+  cursor: pointer;
+}
+
+.btn--whatsapp:hover {
+  background: var(--clr-accent);
+  color: var(--clr-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(200, 98, 42, 0.3);
+}
+
+.btn--whatsapp svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* ── Coverage Info ───────────────────────────────────────── */
+.coverage {
+  padding: var(--space-7) 0;
+}
+
+.coverage__header {
+  margin-bottom: var(--space-5);
+}
+
+.coverage__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  letter-spacing: 0.05em;
+  color: var(--clr-white);
+}
+
+.coverage__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.coverage-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  padding: var(--space-4);
+  transition: border-color var(--dur-base), transform var(--dur-base) var(--ease-out);
+}
+
+.coverage-card:hover {
+  border-color: var(--clr-accent-dim);
+  transform: translateY(-4px);
+}
+
+.coverage-card__icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-2);
+  line-height: 1;
+}
+
+.coverage-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  margin-bottom: var(--space-1);
+}
+
+.coverage-card__info {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--clr-muted);
+  line-height: 1.6;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  .steps::before { display: none; }
+
+  .order-cta__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .order-cta__aside {
+    align-items: flex-start;
+  }
+
+  .order-cta__sub {
+    text-align: left;
+  }
+
+  .coverage__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .coverage__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,45 @@
+/* ============================================================
+   BESTIA — Design Tokens
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Bebas+Neue&display=swap');
+
+:root {
+  /* ── Palette ─────────────────────────────────────────── */
+  --clr-bg:         #080604;
+  --clr-surface:    #100d09;
+  --clr-surface-2:  #1a1510;
+  --clr-border:     rgba(240, 225, 200, 0.08);
+  --clr-text:       #f0e4cc;
+  --clr-muted:      #9a8c78;
+  --clr-accent:     #c8622a;
+  --clr-accent-dim: #8b3e15;
+  --clr-white:      #faf5ec;
+
+  /* ── Typography ──────────────────────────────────────── */
+  --font-display:   'Bebas Neue', sans-serif;
+  --font-serif:     'Cormorant SC', serif;
+  --font-body:      'Cormorant Garamond', serif;
+
+  /* ── Spacing scale (8pt grid) ────────────────────────── */
+  --space-1:   0.5rem;   /*  8px */
+  --space-2:   1rem;     /* 16px */
+  --space-3:   1.5rem;   /* 24px */
+  --space-4:   2rem;     /* 32px */
+  --space-5:   3rem;     /* 48px */
+  --space-6:   4rem;     /* 64px */
+  --space-7:   6rem;     /* 96px */
+  --space-8:   8rem;     /* 128px */
+
+  /* ── Layout ──────────────────────────────────────────── */
+  --max-width:     1200px;
+  --nav-height:    80px;
+
+  /* ── Motion ──────────────────────────────────────────── */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.76, 0, 0.24, 1);
+  --dur-fast:      180ms;
+  --dur-base:      320ms;
+  --dur-slow:      600ms;
+  --dur-xslow:     900ms;
+}

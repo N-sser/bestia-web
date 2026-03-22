@@ -1,0 +1,346 @@
+/* ============================================================
+   BESTIA — Menu Page
+   ============================================================ */
+
+/* ── Menu Hero ───────────────────────────────────────────── */
+.menu-hero {
+  padding-top: calc(var(--nav-height) + var(--space-7));
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--clr-border);
+  overflow: hidden;
+  position: relative;
+}
+
+.menu-hero__label {
+  margin-bottom: var(--space-3);
+}
+
+.menu-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 10rem);
+  letter-spacing: 0.06em;
+  line-height: 0.9;
+  color: var(--clr-white);
+}
+
+.menu-hero__sub {
+  margin-top: var(--space-3);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--clr-muted);
+  max-width: 50ch;
+  line-height: 1.7;
+}
+
+/* Large ghost letter behind hero */
+.menu-hero__bg-letter {
+  position: absolute;
+  right: -0.04em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 30vw;
+  color: var(--clr-surface);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.6;
+}
+
+/* ── Burger Section ──────────────────────────────────────── */
+.menu-section {
+  padding: var(--space-8) 0;
+}
+
+/* Each burger takes up its own dramatic block */
+.burger-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--clr-border);
+  margin-bottom: var(--space-5);
+  position: relative;
+  overflow: hidden;
+}
+
+.burger-block--reversed {
+  direction: rtl;
+}
+
+.burger-block--reversed > * {
+  direction: ltr;
+}
+
+/* Visual panel — the "image" side (pure CSS art for now, replace with img) */
+.burger-block__visual {
+  background: var(--clr-surface);
+  min-height: 520px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-block__visual-placeholder {
+  font-family: var(--font-display);
+  font-size: 12rem;
+  color: var(--clr-surface-2);
+  line-height: 1;
+  user-select: none;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.burger-block:hover .burger-block__visual-placeholder {
+  transform: scale(1.06);
+}
+
+/* Accent stripe on visual panel */
+.burger-block__visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200, 98, 42, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Info panel */
+.burger-block__info {
+  padding: var(--space-6) var(--space-6);
+  background: var(--clr-surface);
+  border-left: 1px solid var(--clr-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.burger-block--reversed .burger-block__info {
+  border-left: none;
+  border-right: 1px solid var(--clr-border);
+}
+
+.burger-block__index {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  color: var(--clr-accent);
+  opacity: 0.15;
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+
+.burger-block__name {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  letter-spacing: 0.06em;
+  color: var(--clr-white);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.burger-block__meat {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--clr-accent);
+  margin-bottom: var(--space-4);
+}
+
+.burger-block__divider {
+  width: 40px;
+  height: 1px;
+  background: var(--clr-border);
+  margin-bottom: var(--space-4);
+}
+
+.burger-block__ingredients-label {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+  margin-bottom: var(--space-2);
+}
+
+.burger-block__ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ingredient {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.ingredient::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background: var(--clr-accent);
+  flex-shrink: 0;
+  position: relative;
+  top: -2px;
+}
+
+.ingredient__name {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: var(--clr-text);
+  letter-spacing: 0.02em;
+}
+
+.ingredient__note {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--clr-muted);
+}
+
+/* Dual-meat combo tags */
+.burger-block__combo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.burger-block__combo-tag {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  border: 1px solid var(--clr-accent-dim);
+  padding: 0.3rem 0.8rem;
+}
+
+.burger-block__combo-sep {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--clr-muted);
+  opacity: 0.5;
+}
+
+/* Cooking method badge */
+.burger-block__method-row {
+  margin-top: var(--space-5);
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.burger-block__method {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--clr-border);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.burger-block__method-label {
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+}
+
+.burger-block__method-value {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--clr-accent);
+}
+
+/* ── Common Ingredients ──────────────────────────────────── */
+.commons {
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--clr-border);
+}
+
+.commons__header {
+  margin-bottom: var(--space-5);
+}
+
+.commons__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 0.05em;
+  color: var(--clr-white);
+}
+
+.commons__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--clr-border);
+  border: 1px solid var(--clr-border);
+}
+
+.common-item {
+  background: var(--clr-surface);
+  padding: var(--space-4);
+  transition: background var(--dur-base);
+}
+
+.common-item:hover {
+  background: var(--clr-surface-2);
+}
+
+.common-item__icon {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-2);
+  line-height: 1;
+}
+
+.common-item__name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  margin-bottom: var(--space-1);
+}
+
+.common-item__desc {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--clr-muted);
+  line-height: 1.5;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .burger-block {
+    grid-template-columns: 1fr;
+    direction: ltr !important;
+  }
+
+  .burger-block__visual {
+    min-height: 280px;
+  }
+
+  .burger-block--reversed .burger-block__info {
+    border-right: none;
+    border-left: none;
+    border-top: 1px solid var(--clr-border);
+  }
+
+  .burger-block__info {
+    border-left: none;
+    border-top: 1px solid var(--clr-border);
+  }
+
+  .commons__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .commons__grid {
+    grid-template-columns: 1fr;
+  }
+}
